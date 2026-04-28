@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<!-- Menentukan bahwa ini adalah dokumen HTML5 -->
+
+<html lang="id">
+<!-- Tag utama HTML, lang="id" artinya bahasa Indonesia -->
+
+<head>
+    <!-- Bagian HEAD (pengaturan, tidak tampil di halaman) -->
+
+    <meta charset="UTF-8">
+    <!-- Mengatur karakter agar semua huruf terbaca dengan benar -->
+
+    <title>Manajemen Mahasiswa</title>
+    <!-- Judul yang muncul di tab browser -->
+
+    <!-- ========================================================= -->
+    <!-- ====================== BAGIAN CSS ======================== -->
+    <!-- ================ Dibuat oleh: RYOMA ====================== -->
+    <!-- ========================================================= -->
+
+    <style>
+        /* CSS digunakan untuk mengatur tampilan halaman */
+
+        /* Mengatur tampilan body (halaman utama) */
+        body {
+            font-family: Arial, sans-serif; /* Jenis font */
+            margin: 0; /* Menghilangkan jarak luar */
+            padding: 0; /* Menghilangkan jarak dalam */
+            background: linear-gradient(135deg, #0f2027, #2c5364); /* Background gradasi */
+            height: 100vh; /* Tinggi layar penuh */
+            display: flex; /* Menggunakan flexbox */
+            justify-content: center; /* Tengah horizontal */
+            align-items: center; /* Tengah vertikal */
+        }
+
+        /* Container utama (kotak isi) */
+        .container {
+            width: 80%; /* Lebar 80% layar */
+            max-width: 800px; /* Maksimal lebar */
+            background: linear-gradient(135deg, #1e3c72, #2a5298); /* Warna kotak */
+            padding: 25px; /* Jarak dalam */
+            border-radius: 15px; /* Sudut melengkung */
+            box-shadow: 0 10px 25px rgba(0,0,0,0.4); /* Bayangan */
+            color: white; /* Warna teks */
+        }
+
+        /* Judul */
+        h2 {
+            margin-bottom: 15px; /* Jarak bawah */
+        }
+
+        /* Grup input agar sejajar */
+        .form-group {
+            display: flex; /* Membuat sejajar */
+            gap: 10px; /* Jarak antar elemen */
+            margin-bottom: 10px;
+        }
+
+        /* Input, select, textarea */
+        .form-group input,
+        .form-group select,
+        textarea {
+            flex: 1; /* Lebar sama rata */
+            padding: 10px; /* Jarak dalam */
+            border-radius: 5px; /* Sudut halus */
+            border: none; /* Hilangkan garis */
+            outline: none; /* Hilangkan garis saat klik */
+            background: rgba(255,255,255,0.9); /* Warna putih transparan */
+        }
+
+        /* Textarea khusus */
+        textarea {
+            width: 100%;
+            margin-bottom: 10px;
+        }
+
+        /* Radio button */
+        .radio-group {
+            margin-bottom: 10px;
+        }
+
+        .radio-group label {
+            margin-right: 15px;
+        }
+
+        /* Tombol */
+        button {
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        /* Tombol submit */
+        .btn-submit {
+            background: #00c6ff;
+            color: white;
+            font-weight: bold;
+        }
+
+        /* Tombol reset */
+        .btn-reset {
+            background: #ff4b5c;
+            color: white;
+        }
+
+        /* Garis pemisah */
+        hr {
+            margin: 20px 0;
+            border: 1px solid rgba(255,255,255,0.5);
+        }
+
+        /* Tabel */
+        table {
+            width: 100%;
+            border-collapse: collapse; /* Menggabungkan garis */
+            background: rgba(255,255,255,0.1);
+        }
+
+        th, td {
+            padding: 10px;
+            text-align: center;
+            border-bottom: 1px solid rgba(255,255,255,0.3);
+        }
+
+        th {
+            font-weight: bold;
+        }
+
+    </style>
+</head>
+
+<body>
+<!-- Semua yang tampil di halaman -->
+
+    <!-- ========================================================= -->
+    <!-- ====================== BAGIAN HTML ======================= -->
+    <!-- ============== Dibuat oleh: Delviyany ==================== -->
+    <!-- ========================================================= -->
+
+    <div class="container">
+    <!-- Kotak utama -->
+
+        <h2>← Manajemen Mahasiswa</h2>
+        <!-- Judul halaman -->
+
+        <form>
+        <!-- Form untuk input data -->
+
+            <div class="form-group">
+                <!-- Input NIM dan Nama -->
+                <input type="text" placeholder="NIM">
+                <input type="text" placeholder="Nama Lengkap">
+            </div>
+
+            <textarea placeholder="Alamat"></textarea>
+            <!-- Input alamat -->
+
+            <div class="radio-group">
+                <!-- Pilihan jenis kelamin -->
+                <label><input type="radio" name="jk"> Pria</label>
+                <label><input type="radio" name="jk"> Wanita</label>
+            </div>
+
+            <div class="form-group">
+                <!-- Dropdown tanggal -->
+                <select>
+                    <option>Tgl</option>
+                    <option>01</option>
+                    <option>02</option>
+                </select>
+
+                <!-- Dropdown bulan -->
+                <select>
+                    <option>Bulan</option>
+                    <option>Januari</option>
+                    <option>Februari</option>
+                </select>
+
+                <!-- Dropdown tahun -->
+                <select>
+                    <option>Tahun</option>
+                    <option>1980</option>
+                    <option>2000</option>
+                    <option>2020</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <!-- Input password -->
+                <input type="password" placeholder="Password">
+            </div>
+
+            <!-- Tombol aksi -->
+            <button class="btn-submit">Submit</button>
+            <button type="reset" class="btn-reset">Reset</button>
+
+        </form>
+
+        <hr>
+        <!-- Garis pemisah -->
+
+        <h3>Data Mahasiswa</h3>
+        <!-- Judul tabel -->
+
+        <table>
+            <!-- Tabel data -->
+
+            <thead>
+                <tr>
+                    <th>No</th>
+                    <th>NIM</th>
+                    <th>Nama</th>
+                    <th>JK</th>
+                    <th>Alamat</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>12345</td>
+                    <td>Contoh Nama</td>
+                    <td>Pria</td>
+                    <td>Bontang</td>
+                </tr>
+            </tbody>
+
+        </table>
+
+    </div>
+
+</body>
+</html>
